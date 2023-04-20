@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -28,7 +29,7 @@ public class AdventureGame {
     private int wolfHP, demiHP, goldRing;
     private String position;
     private static Player player;
-    private Player player1;
+    private static Player player1;
 
     private titleScreenHandler tsHandler = new titleScreenHandler();
     private ChoiceHandler choiceHandler = new ChoiceHandler();
@@ -37,34 +38,26 @@ public class AdventureGame {
         // TODO code application logic here
 
         new AdventureGame();
-        // arraylist of positions
-        ArrayList<String> positionList = new ArrayList<String>();
-        positionList.add("hauntedStart");
-        positionList.add("sheriffStation");
-        positionList.add("talkSheriff");
-        positionList.add("attackSheriff");
-        positionList.add("nextLocation");
-        positionList.add("enterWoods");
-        positionList.add("across");
-        positionList.add("goCar");
-        positionList.add("fight");
-        positionList.add("playerAttack");
-        positionList.add("wolfAttack");
-        positionList.add("win1");
-        positionList.add("enterCabin");
-        positionList.add("goUp");
-        positionList.add("goDown");
-        positionList.add("bossFight");
-        positionList.add("bossAttack");
-        positionList.add("finalAttack");
-        positionList.add("win2");
-        positionList.add("lose");
-        positionList.add("ending");
 
-        System.out.println("GAME SCENES ARRAY LIST: \n" + positionList);
+        // arraylist of users who have saved data
+        ArrayList<String> players = new ArrayList<String>();
 
+        // A loop that instantiates at least five objects and adds them (with the first
+        // object) to the array or ArrayList
+        for (int i = 0; i < 5; i++) {
+            Player player = new Player(25, 10, "Fists", "hauntedStart");
+            players.add(player.toString());
+        }
+
+        // A loop that prints out the toString() method of each object in the array
+        System.out.println("Game Users & Stats: \n" + players);
+
+        // A loop that prints out the toString() method of the first object in the array
         player = new Player(20, 10, "Fists", "hauntedStart");
         System.out.println(" BEGINING STATS: \n" + player.toString());
+
+        // Some kind of analysis of the objects
+        System.out.println(" there are currently " + players.size() + " players in the game");
 
     }
 

@@ -42,6 +42,14 @@ public class Player {
         this.playerHP = playerHP;
     }
 
+    public int getrandomHP() {
+        return playerHP;
+    }
+
+    public void setrandomHP(int randomHP) {
+        this.playerHP = randomHP;
+    }
+
     public int getMonsterHP() {
         return wolfHP;
     }
