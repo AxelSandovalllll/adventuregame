@@ -12,14 +12,16 @@ public class Player {
 
     // attributes
     private int playerHP;
-    private int monsterHP;
+    private int wolfHP;
     private String weapon;
     private String position;
 
     // player constructor
-    public Player(int HP, String weapon) {
+    public Player(int HP, int wolfHP, String weapon, String position) {
         this.playerHP = HP;
+        this.wolfHP = wolfHP;
         this.weapon = weapon;
+        this.position = position;
     }
 
     // random playerhp constructor
@@ -41,11 +43,11 @@ public class Player {
     }
 
     public int getMonsterHP() {
-        return monsterHP;
+        return wolfHP;
     }
 
-    public void setMonsterHP(int monsterHP) {
-        this.monsterHP = monsterHP;
+    public void setMonsterHP(int wolfHP) {
+        this.wolfHP = wolfHP;
     }
 
     public String getWeapon() {
@@ -67,7 +69,7 @@ public class Player {
     // tostring method
     @Override
     public String toString() {
-        return "Player{" + "playerHP=" + playerHP + ", monsterHP=" + monsterHP + ", weapon=" + weapon + ", position="
+        return "Player{" + "playerHP=" + playerHP + ", wolfHP=" + wolfHP + ", weapon=" + weapon + ", position="
                 + position + '}';
     }
 

@@ -6,6 +6,8 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,6 +27,7 @@ public class AdventureGame {
     private JTextArea narrativeArea;
     private int wolfHP, demiHP, goldRing;
     private String position;
+    private static Player player;
     private Player player1;
 
     private titleScreenHandler tsHandler = new titleScreenHandler();
@@ -34,6 +37,35 @@ public class AdventureGame {
         // TODO code application logic here
 
         new AdventureGame();
+        // arraylist of positions
+        ArrayList<String> positionList = new ArrayList<String>();
+        positionList.add("hauntedStart");
+        positionList.add("sheriffStation");
+        positionList.add("talkSheriff");
+        positionList.add("attackSheriff");
+        positionList.add("nextLocation");
+        positionList.add("enterWoods");
+        positionList.add("across");
+        positionList.add("goCar");
+        positionList.add("fight");
+        positionList.add("playerAttack");
+        positionList.add("wolfAttack");
+        positionList.add("win1");
+        positionList.add("enterCabin");
+        positionList.add("goUp");
+        positionList.add("goDown");
+        positionList.add("bossFight");
+        positionList.add("bossAttack");
+        positionList.add("finalAttack");
+        positionList.add("win2");
+        positionList.add("lose");
+        positionList.add("ending");
+
+        System.out.println("GAME SCENES ARRAY LIST: \n" + positionList);
+
+        player = new Player(20, 10, "Fists", "hauntedStart");
+        System.out.println(" BEGINING STATS: \n" + player.toString());
+
     }
 
     public AdventureGame() {
@@ -191,8 +223,7 @@ public class AdventureGame {
 
     // method that sets the display for hp and weapon
     public void playerSetup() {
-        player1 = new Player(20, "Fists");
-
+        player1 = new Player(20, 10, "Fists", "hauntedStart");
         // playerHP = 20;
         wolfHP = 10;
         demiHP = 20;
@@ -200,6 +231,7 @@ public class AdventureGame {
         weaponLabelName.setText(player1.getWeapon());
         hpLabelNumber.setText("" + player1.getPlayerHP());
         hauntedStart();
+
     }
 
     // method that gives first scene
